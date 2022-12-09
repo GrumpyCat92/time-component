@@ -1,6 +1,8 @@
+import DateTime from "./DateTime";
 import DateTimePretty from "./DateTimePretty";
 
 export default function Video(props) {
+  const PrettyTime = DateTimePretty(DateTime);
   return (
     <div className="video">
       <iframe
@@ -9,7 +11,7 @@ export default function Video(props) {
         allow="autoplay; encrypted-media"
         allowFullScreen
       ></iframe>
-      <DateTimePretty date={props.date} />
+      <PrettyTime date={props.date} />
     </div>
   );
 }
